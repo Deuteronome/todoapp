@@ -17,5 +17,14 @@ export class TaskService {
         return [...this.tasks];
     }
 
+    changeUrgenceById(taskId: string):void {
+        const foundTask = this.tasks.find(task => task.id === taskId);
+        if(!foundTask) {
+            throw new Error('task not found');
+        }
+
+        foundTask.changeUrgence();
+    }
+
     
 }

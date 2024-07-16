@@ -21,4 +21,8 @@ export class Task {
     getLastChance(): boolean {
         return (this.endAt.getTime()-new Date().getTime())<1000*3600*24*7;
     }
-}
+
+    changeUrgence(): void {
+        this.isUrgent = !this.isUrgent;
+    }
+ }

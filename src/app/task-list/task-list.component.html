@@ -2,13 +2,13 @@
     <div class="row justify-content-center">
       @for(task of taskList; track task.id) {
         @if(task.isUrgent) {
-          <app-task-tile [ngClass]="{'last-chance': task.getLastChance()}" [task]="task" class="col-10 col-lg-5 task-tile m-2 p-3"/>
+          <app-task-tile [ngClass]="{'last-chance': task.getLastChance(), 'time-left': !task.getLastChance()}" [task]="task" class="col-10 col-lg-5 task-tile m-2 p-3"/>
         }      
       }
   
       @for(task of taskList; track task.id) {
         @if(!task.isUrgent) {
-          <app-task-tile [ngClass]="{'last-chance': task.getLastChance()}" [task]="task" class="col-10 col-lg-5 task-tile m-2 p-3"/>
+          <app-task-tile [ngClass]="{'last-chance': task.getLastChance(), 'time-left': !task.getLastChance()}" [task]="task" class="col-10 col-lg-5 task-tile m-2 p-3"/>
         }      
       }
       

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DatePipe, NgClass, NgStyle, UpperCasePipe } from '@angular/common';
 import { Task } from '../models/task';
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-task-tile',
@@ -17,7 +18,7 @@ import { Task } from '../models/task';
 export class TaskTileComponent implements OnInit {
   @Input() task! : Task;
   
-
+  constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
    
@@ -29,6 +30,6 @@ export class TaskTileComponent implements OnInit {
   }
 
   setUrgence():void {
-    this.task.isUrgent = !this.task.isUrgent;
+    this.taskService.changeUrgenceById(this.task.id);
   }
 }
