@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'beauty';
+    src: url(./assets/BeautyDemo.ttf);
+}
+
+header {
+    background-color: #000000;
+    color: #8f1919;
+
+    h1 {
+        font-family: 'beauty', sans-serif;
+        font-weight: 500;
+        font-size: 3.5rem;
+    }
+}

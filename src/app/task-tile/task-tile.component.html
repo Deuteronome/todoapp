@@ -1,17 +1,18 @@
 <div class="row justify-content-between align-items-center">
-    <h2 class="col-8">{{ task.name }}</h2>
+    <h2 [ngStyle]="{color: task.isUrgent?'red':'black'}" class="col-8">{{ task.name | uppercase }}</h2>
     <button class="col-2 btn btn-dark" (click)="setUrgence()">{{ getFlag()}}</button>
     <p class="col-12 mt-3 pt-1 border-top">{{ task.description}}</p>
     <div class="col-6">
-        <p> Débuté  le : {{ task.createdAt | date : 'dd/MM/yyyy' }}</p>
-        <p> Echéance : {{ task.endAt | date : 'dd/MM/yyyy' }}</p>
+        <p> Débuté  le : {{ task.createdAt | date : 'd MMMM yyyy' }}</p>
+        <p> Echéance : {{ task.endAt | date : 'd MMMM yyyy' }}</p>
     </div>
-    @if(task.picture) {
-        <div class="col-5">
-            <img [src]="task.picture" [alt]="task.name" class="img-fluid">
-        </div>
+    <div class="col-5">
+    @if(task.picture) {        
+        <img [src]="task.picture" [alt]="task.name" class="img-fluid">        
+    } @else {
+        <img src="/assets/tilePictures/default.png" alt="pas d'image" class="img-fluid">
     }
-   
+    </div>
     
 </div>
     
