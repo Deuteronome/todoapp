@@ -1,1 +1,42 @@
-<p>home-slider works!</p>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      @for(slide of slideList; track slide.id) {
+        <div [ngStyle]="{backgroundImage: 'url('+slide.image+')'}" class="carousel-item home-slide " [ngClass]="{'active': slide.image==='/assets/slides/slide1.jpg'}">
+          <div class="inner-slide d-flex justify-content-center align-items-center">
+             <h1 class="punch-line text-center p-5" [ngStyle]="{transform : 'scale(1.1) rotate('+slide.rotation+')'}">{{slide.punchLine}}</h1>
+          </div>         
+        </div>
+      }
+      
+      
+    </div>
+  
+  
+  
+  </div>
+
+<!--Punch-lines pour la page d'accueil :
+
+    ""
+        Gérer vos tâches n'a jamais été aussi amusant !
+
+    "De l'Organisation avec des Couleurs"
+        Priorisez facilement avec notre code couleur vibrant.
+
+    "Sentez l'Accomplissement à Chaque Étape"
+        Chaque tâche complétée vous apporte un sentiment de réussite.
+
+    "Transformez Vos To Do en Moments de Joie"
+        Un design joyeux pour une gestion de tâches sans stress.
+
+    ""
+        Restez organisé tout en vous amusant !
+
+    ""
+        Des outils pour vous aider à atteindre vos objectifs.
+
+    "Boostez Votre Productivité avec Style"
+        Une application élégante pour une efficacité maximale.
+
+    "Votre Compagnon de Productivité"
+        Toujours à vos côtés pour gérer vos priorités.-->
